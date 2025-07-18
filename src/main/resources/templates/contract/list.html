@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>MyWork_01</title> <!-- ブラウザの上に表示 -->
+    <link rel="stylesheet" th:href="@{/css/contract/list.css}"> <!-- cssのURL -->
+</head>
+<body>
+    <h1>Contract管理システム</h1>
+    <h2>Contract一覧1年分（2025年4月～2026年3月）</h2>
+    <table>
+        <tr>
+            <th>ID</th>  <!-- 表題 -->
+            <th>年月</th> <!-- 表題 -->
+            <th>通貨</th> <!-- 表題 -->
+            <th>金額</th> <!-- 表題 -->
+        </tr>
+        <tr th:each="contract : ${contractlist}">
+            <td th:text="${contract.id}"></td>        <!-- 数値が入る箇所 -->
+            <td th:text="${contract.yearmonth}"></td> <!-- 数値が入る箇所 -->
+            <td th:text="${contract.currency}"></td>  <!-- 数値が入る箇所 -->
+            <td th:text="${contract.price}"></td>     <!-- 数値が入る箇所 -->
+        </tr>
+    </table>
+</body>
+</html>
